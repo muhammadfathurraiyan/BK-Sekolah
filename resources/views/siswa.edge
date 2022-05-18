@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8" />
+	<title>Siswa</title>
+	<!-- import font dan css -->
+	{{ style('style') }}
+	<script src="https://kit.fontawesome.com/8cb74416b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<h1>
+        <a href="/beranda">
+				  <img src="img/logo2.png">
+			  </a>
+      </h1>
+			<ul>
+				<li>
+                    <a href="/beranda" >Beranda</a>
+                    <a href="/input-masalah">Input Masalah</a>
+                    <a href="/tipe-masalah">Tipe Masalah</a>
+                    <a href="/siswa" class="header-bold">Siswa</a>
+                    <a href="/signin">
+					              <input type="submit" name="signout" value="Sign out" class="button">
+				            </a>
+        </li>
+			</ul>
+		</div>
+	</header>
+    <section class="main-container">
+		<div class="siswa-container">
+			<div class="siswa-text">
+				<div class="siswa-section">
+					<h1>Siswa</h1>
+					<p>List Data Siswa Yang Bermasalah</p>
+                    <br>
+                    <table class="tg1">
+                        <thead>
+                          <tr>
+                            <th class="tg-c1jh" colspan="5">List Data Siswa</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="tg-c1jh">Nama</td>
+                            <td class="tg-c1jh">Nomor Induk</td>
+                            <td class="tg-c1jh">Status</td>
+                            <td class="tg-c1jh">Tipe Masalah</td>
+                            <td class="tg-c1jh">Hapus</td>
+                          </tr>
+                          @each(data in datas)
+                          <tr>
+                            <form action="{{ '/siswa/' + data._id + '?_method=DELETE' }}" method="POST">
+                              {{ csrfField() }}
+                            <td class="tg-jfmx">{{data.nama}}</td>
+                            <td class="tg-jfmx">{{data.nik}}</td>
+                            <td class="tg-jfmx">{{data.status}}</td>
+                            <td class="tg-jfmx">{{data.tipe}}</td>
+                            <td class="tg-jfmx1">
+                              <button type="submit" style="border:none; cursor:pointer;"><i class="fa-solid fa-trash-can" style="color:#4c4c4c;"></i></button>
+                            </td>
+                            </form>
+                          </tr>
+                          @endeach
+                        </tbody>
+                        </table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer-container">
+			<small>Copyright &copy; 2022 BK Sekolah</small>
+		</div>
+	</footer>
+</body>
+</html>

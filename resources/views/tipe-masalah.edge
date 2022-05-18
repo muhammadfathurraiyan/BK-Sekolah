@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8" />
+	<title>Tipe Masalah</title>
+	<!-- import font dan css -->
+	{{ style('style') }}
+	<script src="https://kit.fontawesome.com/8cb74416b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<h1><a href="/beranda">
+				<img src="img/logo2.png">
+			</a></h1>
+			<ul>
+				<li>
+                    <a href="/beranda">Beranda</a>
+                    <a href="/input-masalah">Input Masalah</a>
+                    <a href="/tipe-masalah" class="header-bold">Tipe Masalah</a>
+                    <a href="/siswa">Siswa</a>
+                    <a href="/signin">
+					    <input type="submit" name="signout" value="Sign out" class="button">
+				    </a>
+                </li>
+			</ul>
+		</div>
+	</header>
+    <section class="main-container">
+        <div class="tipe-container">
+			<div class="tipe-text">
+				<div class="tipe-section">
+					<h1>Input Masalah</h1>
+					<p>Form Untuk Tipe Masalah</p>
+                    <br><br><br>
+                    <form action="/tipe-masalah" method="post">
+                        <div class="tipe-masalah-container">
+                            <pre>Tipe Masalah  : <input type="text" name = "tipe" class="tipe-masalah"></pre>
+                        </div>
+                            <input type="submit"  class="tipe-button">
+					</form>
+                    <img src="img/img5.png" alt="Input Illustration">
+				</div>
+			</div>
+		</div>
+        <div class="tipe-container1">
+			<div class="tipe-text1">
+				<div class="tipe-section1">
+					<h1>Input Masalah</h1>
+					<p>List Tipe Masalah</p>
+                    <br><br><br>
+                    <table class="tg">
+                        <thead>
+                          <tr>
+                            <th class="tg-k0ch" colspan="2">Tipe Masalah</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @each(tipe in tipes)
+                                <tr>
+									<form action="{{ '/tipe-masalah/' + tipe._id + '?_method=DELETE' }}" method="POST">
+										{{ csrfField() }}
+                                    <td class="tg-dp0m">{{tipe.tipe}}</td>
+									<td class="tg-dp0m">
+										<button type="submit" style="border:none; cursor:pointer;"><i class="fa-solid fa-trash-can" style="color:#4c4c4c;"></i></button>
+									</td>
+									</form>
+                         		 </tr>
+                            @endeach
+                        </tbody>
+                        </table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="footer-container">
+			<small>Copyright &copy; 2022 BK Sekolah</small>
+		</div>
+	</footer>
+</body>
+</html>

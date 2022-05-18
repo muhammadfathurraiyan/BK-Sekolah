@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8" />
+	<title>Beranda</title>
+	<!-- import font dan css -->
+	{{ style('style') }}
+	<script src="https://kit.fontawesome.com/8cb74416b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<h1><a href="/beranda">
+				<img src="img/logo2.png">
+			</a></h1>
+			<ul>
+				<li>
+                    <a href="/beranda" class="header-bold">Beranda</a>
+                    <a href="/input-masalah">Input Masalah</a>
+                    <a href="/tipe-masalah">Tipe Masalah</a>
+                    <a href="/siswa">Siswa</a>
+                    <a href="/signin">
+					    <input type="submit" name="signout" value="Sign out" class="button">
+				    </a>
+                </li>
+			</ul>
+		</div>
+	</header>
+    <section class="main-container">
+		<div class="beranda-container">
+			<div class="beranda-text">
+				<div class="beranda-section">
+					<h1>Selamat Datang di Applikasi BK Sekolah</h1>
+					<p>Solusi Moderen Untuk Masalah Moderen</p>
+                    <br><br><br>
+                    <p class="text-center">Silahkan Klik Tombol Dibawah Jika Anda Ingin <br> Menginput Data Siswa Yang Bermasalah</p>
+                    <a href="/input-masalah">
+                        <input type="submit" name="input-masalh" value="Input Masalah" class="beranda-button">
+                    </a>
+                    <br><br>
+                    <p class="text-center">Silahkan Klik Tombol Dibawah Jika Anda Ingin <br> Membuat Tipe Masalah</p>
+                    <a href="/tipe-masalah">
+                            <input type="submit" name="tipe-masalah" value="Tipe Masalah" class="beranda-button">
+                    </a>
+                    <br><br>
+                    <p class="text-center">Silahkan Klik Tombol Dibawah Jika Anda Ingin <br> Melihat Rincian Siswa Yang Bermasalah</p>
+                    <a href="/siswa">
+                            <input type="submit" name="siswa" value="Siswa" class="beranda-button">
+                    </a>
+				</div>
+			</div>
+			<div class="beranda-image">
+               <img src="img/img2.png" alt="Beranda Illustartion" class="beranda-gambar-edit">
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer-container">
+			<small>Copyright &copy; 2022 BK Sekolah</small>
+		</div>
+	</footer>
+</body>
+</html>
